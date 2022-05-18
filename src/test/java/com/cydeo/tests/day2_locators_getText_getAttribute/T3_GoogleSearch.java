@@ -8,27 +8,37 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class T3_GoogleSearch {
-    public static void main(String[] args) throws InterruptedException {
+
+    public static void main(String[] args) {
+        //TC#3: Google search
+        //1- Open a Chrome browser
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
         driver.manage().window().maximize();
 
+        //2- Go to: https://google.com
         driver.get("https://www.google.com");
-        Thread.sleep(2000);
-        WebElement googleSearchBar = driver.findElement(By.name("q"));
-        Thread.sleep(2000);
-        googleSearchBar.sendKeys("apple" + Keys.ENTER);
-        Thread.sleep(2500);
-        String expectedTitle = "apple";
+
+        //3- Write “apple” in search box
+        //4- PRESS ENTER using Keys.ENTER
+        WebElement googleSearchBox = driver.findElement(By.name("q"));
+        googleSearchBox.sendKeys("apple" + Keys.ENTER);
+
+        //5- Verify title:
+        //Expected: Title should start with “apple” word
+        String expectedInTitle = "apple";
         String actualTitle = driver.getTitle();
 
-        if (actualTitle.startsWith("apple")){
-            System.out.println("Title Verification PASSED");
-        } else {
-            System.out.println("Title Verification FAILED");
+        if (actualTitle.startsWith(expectedInTitle)){
+            System.out.println("Title verification PASSED!");
+        }else{
+            System.out.println("Title verification FAILED!!!");
         }
 
-        driver.close();
+        //BREAK 1.57CST
+        //BREAK 2.57EST
 
     }
+
+
 }
