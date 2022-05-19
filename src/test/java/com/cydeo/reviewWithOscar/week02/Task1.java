@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class Task1 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 //        open chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
@@ -41,6 +41,7 @@ public class Task1 {
         String expectedConfirmationMessage = "Your e-mail's been sent!";
         String actualConfirmationMessage = confirmationMessage.getText();
         WebDriverFactory.actualVsExpectedEquals(actualConfirmationMessage, expectedConfirmationMessage, "Confirmation Message");
-
+        Thread.sleep(3000);
+        driver.close();
     }
 }
