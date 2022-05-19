@@ -22,12 +22,8 @@ public class T3_getAttribute_cssSelector {
         WebElement logInButton = driver.findElement(By.cssSelector("input[value='Log In']"));
         String expectedText = "Log In";
         String actualText = logInButton.getAttribute("value");
-        System.out.println("expectedText = " + expectedText);
-        System.out.println("actualText = " + actualText);
 
-        if (actualText.equals(expectedText)){
-
-        }
+       WebDriverFactory.actualVsExpectedEquals(actualText, expectedText, "Log In Button Text");
 //        PS: Inspect and decide which locator you should be using to locate web
 //        elements.
 //        PS2: Pay attention to where to get the text of this button from
