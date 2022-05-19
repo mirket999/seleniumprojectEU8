@@ -20,4 +20,15 @@ public class WebDriverFactory {
         }
 
     }
+
+    public static void actualVsExpectedEquals(String actual, String expected, String TestType){
+        System.out.println("actual = " + actual);
+        System.out.println("expected = " + expected);
+
+        if (actual.equals(expected)){
+            System.out.println(TestType + " Verification Test PASSED!");
+        } else {
+            System.out.println(TestType + " Verification Test FAILED!");
+        }
+    }
 }
