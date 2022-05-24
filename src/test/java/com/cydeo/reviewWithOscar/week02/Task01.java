@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Task1 {
+public class Task01 {
     public static void main(String[] args) throws InterruptedException {
 //        open chrome browser
         WebDriver driver = WebDriverFactory.getDriver("chrome");
