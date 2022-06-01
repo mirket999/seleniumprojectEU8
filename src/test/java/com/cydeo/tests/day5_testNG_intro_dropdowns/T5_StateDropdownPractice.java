@@ -35,14 +35,18 @@ driver.get("http://practice.cybertekschool.com/dropdown");
     }
 
     @Test
-    public void stateDropdownTest(){
+    public void stateDropdownTest() throws InterruptedException{
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
 
         //3. Select Illinois
         stateDropdown.selectByVisibleText("Illinois");
 
+        Thread.sleep(2000);
+
         //4. Select Virginia
-        stateDropdown.selectByIndex(48);
+        stateDropdown.selectByIndex(47);
+
+        Thread.sleep(2000);
 
         //5. Select California
         stateDropdown.selectByValue("CA");
